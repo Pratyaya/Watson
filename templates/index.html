@@ -1,0 +1,39 @@
+<html>
+<head>
+
+</head>
+
+<script>
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "http://35.237.3.253/quotes.txt", true);
+  xhttp.send();
+}
+
+
+</script>
+
+<body>
+<div class="block1" align="Center">
+<h1>Hello {{name}}!</h1>
+  <h2>Click Image to chat with Watson.</h2>
+  <p>
+
+<div id="demo">
+{{quote}}
+</div>
+<br>
+<button  onclick="loadDoc()">"Change The Quote" </button>
+  </p>
+<a href="/chat">
+<img src="https://geneticliteracyproject.org/wp-content/uploads/2017/11/m5xbsgp3zxjvkztcxo4o.png">
+</a>
+</div>
+</body>
+</html>
